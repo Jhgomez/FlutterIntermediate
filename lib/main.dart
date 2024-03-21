@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -21,7 +21,13 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Make it awesome')
+            Text('Make it awesome'),
+            IconButton(
+              onPressed: null, 
+              icon: 
+              Icon(Icons.alarm),
+              tooltip: 'My first tooltip',
+              )
           ]
         )
       )
