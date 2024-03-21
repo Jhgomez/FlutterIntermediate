@@ -12,7 +12,19 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    throw Scaffold(
+      appBar: AppBar(
+        title: const Text('Intermediate App'),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary
+      ),
+      body: const Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Make it awesome')
+          ]
+        )
+      )
+    );
   }  
 }
