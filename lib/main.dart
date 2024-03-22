@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'clock.dart';
 
 void main() {
   runApp(
@@ -16,7 +17,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   int counter = 0;
-  List<Widget> items = [];
+  List<Widget> items = [Clock()];
 
   @override
   void initState () {
