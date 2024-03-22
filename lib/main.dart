@@ -70,6 +70,10 @@ class _MyAppState extends State<MyApp> {
         title: const Text('Intermediate App'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _onClick, 
+        child: const Icon(Icons.add)
+        ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
