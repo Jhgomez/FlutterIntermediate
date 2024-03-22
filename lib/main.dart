@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MaterialApp(
+      home: MyApp()
+    )
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -18,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   void initState () {
     super.initState();
     for(int i = 0; i < 5; i++) {
-      Widget child = _newItem(i)
+      Widget child = _newItem(i);
       items.add(child);
     }
   }
@@ -32,6 +36,7 @@ class _MyAppState extends State<MyApp> {
     Key key = Key('item_$i');
     Container child = Container(
       key: key,
+      padding: const EdgeInsets.all(10),
       child: Chip(
         label: Text('$i Name here'),
         deleteIconColor: Colors.red,
@@ -60,25 +65,29 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    throw Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Text('Intermediate App'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Make it awesome'),
-            IconButton(
+            const Text('Make it awesome'),
+            const IconButton(
               onPressed: null, 
               icon: 
               Icon(Icons.alarm),
               tooltip: 'My first tooltip',
-              )
+              ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: items,
+            ) 
           ]
         )
       )
     );
   }  
-}
+ }
