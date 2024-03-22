@@ -18,15 +18,14 @@ class ClockState extends State<Clock> {
   }
 
   void onTimer(Timer timer) {
-    var now = DateTime.now;
-    var formatter = DateFormat
-    setState(() {
-      time = timer.
-    });
+    var now = DateTime.now();
+    var formatter = DateFormat('hh:mm:ss');
+    String formatted = formatter.format(now);
+    setState(() => time = formatted);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Text(time, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),);
   }
 }
