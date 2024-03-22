@@ -50,6 +50,7 @@ class _MyAppState extends State<MyApp> {
         ),
     );
 
+    counter++;
     return child;
   }
 
