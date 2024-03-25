@@ -14,19 +14,30 @@ class TimeCounterState extends State<TimeCounter> {
   late  Duration duration;
 
   void onStart() {
-
+    setState(() {
+      watch = Stopwatch();
+      timer = Timer.periodic(Duration(milliseconds: 250), onTimeOut);
+    });
+    watch.start();
   }
 
   void onStop() {
-
+    timer.cancel();
+    watch.stop();
   }
 
   void onTimeOut(Timer timer) {
+    if (watch.isRunning) return;
 
+    setState(() {
+      duration = watch.elapsed;
+    });
   }
 
   void onClear(Duration value) {
-
+    setState(() {
+      duration = const Duration();
+    });
   }
 
   @override
