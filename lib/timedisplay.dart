@@ -9,7 +9,7 @@ class TimeDisplay extends StatelessWidget {
   final ValueChanged<Duration>? onClear;
 
   void onClick() {
-    onClear??(duration);
+    onClear?.call(duration);
   }
   
   @override
