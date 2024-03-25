@@ -92,7 +92,7 @@ class _MyAppState extends State<Home> {
               children: items,
             ),
             const Text('My Stop Watch'),
-            TimeCounter(),
+            // TimeCounter(),
             Authenticator(
               onAutheticated: onAuthentication,
             ),
@@ -102,7 +102,18 @@ class _MyAppState extends State<Home> {
               onPressed: () {
                 Navigator.of(context).pushNamed('/second');
               },
-              child: const Text('Next')
+              child: const Text('Second')
+              ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator
+                .of(context)
+                .pushNamedAndRemoveUntil(
+                  '/removed',
+                  (route) => false
+                  );
+              },
+              child: const Text('Removed')
               )
           ]
         )
