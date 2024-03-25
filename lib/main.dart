@@ -85,7 +85,8 @@ class _MyAppState extends State<MyApp> {
         child: const Icon(Icons.add)
         ),
       body: Center(
-        child: Column(
+        child: SingleChildScrollView(
+          child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             const IconButton(
@@ -105,6 +106,7 @@ class _MyAppState extends State<MyApp> {
             ),
             Text('$isAuthenticated')
           ]
+        )
         )
       )
     );
