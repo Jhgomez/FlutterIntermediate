@@ -23,7 +23,7 @@ class RemovedScreenState extends State<RemovedScreen> {
               ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/home');
+                Navigator.of(context).pop();
               }, 
               child: const Text('Back')
               )

@@ -17,7 +17,7 @@ class ThirdState extends State<ThirdScreen> {
             const Text('Third screen'),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/second');
+                Navigator.of(context).pop();
               }, 
               child: const Text('Back')
               )

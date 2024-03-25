@@ -23,7 +23,7 @@ class SecondState extends State<SecondScreen> {
               ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/home');
+                Navigator.of(context).pop();
               }, 
               child: const Text('Back')
               )
