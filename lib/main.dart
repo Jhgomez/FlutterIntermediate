@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Navigation',
       routes: <String, WidgetBuilder> {
-        '/Home': (context) => Home(),
+        '/home': (context) => Home(),
+        '/removed': (context) => RemovedScreen(),
         '/second': (context) => SecondScreen(),
         '/third': (context) => ThirdScreen(),
       },
