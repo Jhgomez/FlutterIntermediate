@@ -42,6 +42,7 @@ class TimeCounterState extends State<TimeCounter> {
 
   @override
   void initState() {
+    super.initState();
     duration = Duration();
   
   }
