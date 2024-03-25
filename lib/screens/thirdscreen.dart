@@ -12,8 +12,7 @@ class ThirdState extends State<ThirdScreen> {
       appBar: AppBar(
         title: const Text('Third screen')
       ),
-      body: Container(
-        child: Column(
+      body: Column(
           children: [
             const Text('Third screen'),
             ElevatedButton(
@@ -22,7 +21,6 @@ class ThirdState extends State<ThirdScreen> {
               )
           ],
         ),
-      ),
     );
   }
 }

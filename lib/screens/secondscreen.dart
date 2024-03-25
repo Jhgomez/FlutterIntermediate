@@ -12,8 +12,7 @@ class SecondState extends State<SecondScreen> {
       appBar: AppBar(
         title: const Text('Second screen')
       ),
-      body: Container(
-        child: Column(
+      body: Column(
           children: [
             const Text('Second screen'),
             ElevatedButton(
@@ -25,8 +24,7 @@ class SecondState extends State<SecondScreen> {
               child: const Text('Back')
               )
           ],
-        ),
-      ),
+        )
     );
   }
 }
