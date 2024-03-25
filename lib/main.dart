@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'clock.dart';
 import 'timecounter.dart';
+import 'authenticator.dart';
 
 void main() {
   runApp(
@@ -16,6 +17,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  bool isAuthenticated = false;
+
+  void onAuthentication(bool value) {
+    setState(() => isAuthenticated = value);
+  }
 
   int counter = 0;
   List<Widget> items = [Clock()];
@@ -81,7 +88,6 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Make it awesome'),
             const IconButton(
               onPressed: null, 
               icon: 
@@ -93,7 +99,11 @@ class _MyAppState extends State<MyApp> {
               children: items,
             ),
             const Text('My Stop Watch'),
-            TimeCounter() 
+            TimeCounter(),
+            Authenticator(
+              onAutheticated: onAuthentication,
+            ),
+            Text('$isAuthenticated')
           ]
         )
       )
