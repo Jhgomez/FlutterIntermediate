@@ -17,7 +17,7 @@ class RemovedScreenState extends State<RemovedScreen> {
             const Text('Removed screen'),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/third');
+                Navigator.of(context).pushNamed('/second');
               }, 
               child: const Text('Next')
               ),
