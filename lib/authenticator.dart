@@ -37,27 +37,29 @@ class AuthenticatorState extends State<Authenticator> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      padding: EdgeInsets.all(16),
-      child: Column(
-        children: [
-          TextField(
-            controller: user,
-            decoration: const InputDecoration(labelText: 'Username'),
-          ),
-          TextField(
-            controller: password,
-            decoration: const InputDecoration(labelText: 'Password'),
-            obscureText: true,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: ElevatedButton(
-              onPressed: onClick,
-              child: const Text('Login'),
-            ),
-          )
-        ],
-      ),
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(      
+          children: [
+           TextField(
+             controller: user,
+             decoration: const InputDecoration(labelText: 'Username'),
+           ),
+           TextField(
+             controller: password,
+             decoration: const InputDecoration(labelText: 'Password'),
+             obscureText: true,
+           ),
+           Padding(
+             padding: const EdgeInsets.all(10),
+             child: ElevatedButton(
+               onPressed: onClick,
+               child: const Text('Login'),
+             ),
+           )
+          ],
+        ),
+      )
     );
   } 
 
