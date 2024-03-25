@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'screens/home/home.dart';
+import 'screens/secondscreen.dart';
+import 'screens/thirdscreen.dart';
 
 void main() {
   runApp(
@@ -12,10 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Navigation',
-      routes: const <String, WidgetBuilder> {
-
+      routes: <String, WidgetBuilder> {
+        '/Home': (context) => Home(),
+        '/second': (context) => SecondScreen(),
+        '/third': (context) => ThirdScreen(),
       },
-      home: MyApp()
+      home: 
     );
   }
 }
