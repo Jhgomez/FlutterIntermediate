@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class TimeDisplay extends StatelessWidget {
 
-  TimeDisplay({super.key, this.color = Colors.green, this.duration = const Duration(), this.onClear});
+  const TimeDisplay({super.key, this.color = Colors.green, this.duration = const Duration(), this.onClear});
   
-  Duration duration;
-  Color color;
+  final Duration duration;
+  final Color color;
   final ValueChanged<Duration>? onClear;
 
   void onClick() {
