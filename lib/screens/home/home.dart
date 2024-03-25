@@ -100,7 +100,7 @@ class _MyAppState extends State<Home> {
             const Text('Navigation'),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/Second');
+                Navigator.of(context).pushNamed('/second');
               },
               child: const Text('Next')
               )

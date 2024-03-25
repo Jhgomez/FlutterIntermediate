@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/home/home.dart';
 import 'screens/secondscreen.dart';
 import 'screens/thirdscreen.dart';
+import 'screens/removedscreen.dart';
 
 void main() {
   runApp(
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         '/second': (context) => SecondScreen(),
         '/third': (context) => ThirdScreen(),
       },
-      home: 
+      home: Home()
     );
   }
 }

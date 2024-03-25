@@ -7,7 +7,7 @@ class ThirdScreen extends StatefulWidget {
 
 class ThirdState extends State<ThirdScreen> {
   @override
-  Widget build(Object context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Third screen')
@@ -16,7 +16,9 @@ class ThirdState extends State<ThirdScreen> {
           children: [
             const Text('Third screen'),
             ElevatedButton(
-              onPressed: onPressed, 
+              onPressed: () {
+                Navigator.of(context).pushNamed('/second');
+              }, 
               child: const Text('Back')
               )
           ],

@@ -7,7 +7,7 @@ class SecondScreen extends StatefulWidget {
 
 class SecondState extends State<SecondScreen> {
   @override
-  Widget build(Object context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Second screen')
@@ -16,11 +16,15 @@ class SecondState extends State<SecondScreen> {
           children: [
             const Text('Second screen'),
             ElevatedButton(
-              onPressed: onPressed, 
+              onPressed: () {
+                Navigator.of(context).pushNamed('/third');
+              }, 
               child: const Text('Next')
               ),
             ElevatedButton(
-              onPressed: onPressed, 
+              onPressed: () {
+                Navigator.of(context).pushNamed('/home');
+              }, 
               child: const Text('Back')
               )
           ],
