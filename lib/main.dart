@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'clock.dart';
+import 'timecounter.dart';
 
 void main() {
   runApp(
@@ -90,7 +91,9 @@ class _MyAppState extends State<MyApp> {
             Column(
               mainAxisSize: MainAxisSize.min,
               children: items,
-            ) 
+            ),
+            const Text('My Stop Watch'),
+            TimeCounter() 
           ]
         )
       )
