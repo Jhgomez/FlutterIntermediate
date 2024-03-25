@@ -96,7 +96,14 @@ class _MyAppState extends State<Home> {
             Authenticator(
               onAutheticated: onAuthentication,
             ),
-            Text('$isAuthenticated')
+            Text('$isAuthenticated'),
+            const Text('Navigation'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/Second');
+              },
+              child: const Text('Next')
+              )
           ]
         )
         )
