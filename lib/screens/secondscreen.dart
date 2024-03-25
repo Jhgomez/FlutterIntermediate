@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/mywidget.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
@@ -26,7 +27,8 @@ class SecondState extends State<SecondScreen> {
                 Navigator.of(context).pop();
               }, 
               child: const Text('Back')
-              )
+            ),
+            MyWidget()
           ],
         )
     );
