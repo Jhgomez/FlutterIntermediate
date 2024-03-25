@@ -16,7 +16,7 @@ class TimeCounterState extends State<TimeCounter> {
   void onStart() {
     setState(() {
       watch = Stopwatch();
-      timer = Timer.periodic(Duration(milliseconds: 250), onTimeOut);
+      timer = Timer.periodic(const Duration(milliseconds: 100), onTimeOut);
     });
     watch.start();
   }
@@ -27,7 +27,7 @@ class TimeCounterState extends State<TimeCounter> {
   }
 
   void onTimeOut(Timer timer) {
-    if (watch.isRunning) return;
+    if (!watch.isRunning) return;
 
     setState(() {
       duration = watch.elapsed;
