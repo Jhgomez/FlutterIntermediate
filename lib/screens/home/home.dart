@@ -148,7 +148,13 @@ class _MyAppState extends State<Home> {
             ElevatedButton(
               onPressed: _onNavigateWithParameters,
               child: const Text('Go')
-              )
+              ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/redux');
+              },
+              child: const Text('Navigate to redux')
+            )
           ]
         )
         )
