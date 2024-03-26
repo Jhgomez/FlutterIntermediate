@@ -74,6 +74,11 @@ class _MyAppState extends State<Home> {
     }
   }
 
+  void _onPressed() {
+    _store.set('name', _name.text);
+    Navigator.of(context).pushNamed('/second');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,7 +132,11 @@ class _MyAppState extends State<Home> {
             TextField(
               controller: _name,
               decoration: const InputDecoration(labelText: 'Enter your name'),
-            )
+            ),
+            ElevatedButton(
+              onPressed: _onPressed,
+              child: const Text('Go to second screen')
+              )
           ]
         )
         )
