@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'clock.dart';
 import 'timecounter.dart';
 import 'authenticator.dart';
+import '/code/globalstate.dart';
+import '/screens/secondscreen.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,6 +11,16 @@ class Home extends StatefulWidget {
 }
 
 class _MyAppState extends State<Home> {
+
+  void _onNavigateWithParameters() {
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context) => SecondScreen(_name.text)));
+  }
+
+  late TextEditingController _name;
+  final GlobalState _store = GlobalState.instance;
 
   bool isAuthenticated = false;
 
@@ -26,6 +38,10 @@ class _MyAppState extends State<Home> {
       Widget child = _newItem(i);
       items.add(child);
     }
+
+    _name = TextEditingController();
+    _store.set('name', '');
+    _name.text = _store.get('name');
   }
 
   void _onClick() {
@@ -65,6 +81,11 @@ class _MyAppState extends State<Home> {
     }
   }
 
+  void _onPressed() {
+    _store.set('name', _name.text);
+    Navigator.of(context).pushNamed('/second');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,7 +113,7 @@ class _MyAppState extends State<Home> {
               children: items,
             ),
             const Text('My Stop Watch'),
-            // TimeCounter(),
+            TimeCounter(),
             Authenticator(
               onAutheticated: onAuthentication,
             ),
@@ -114,7 +135,26 @@ class _MyAppState extends State<Home> {
                   );
               },
               child: const Text('Removed')
-              )
+              ),
+            TextField(
+              controller: _name,
+              decoration: const InputDecoration(labelText: 'Enter your name'),
+            ),
+            ElevatedButton(
+              onPressed: _onPressed,
+              child: const Text('Go to second screen')
+              ),
+            const Text('Navigate with parameters'),
+            ElevatedButton(
+              onPressed: _onNavigateWithParameters,
+              child: const Text('Go')
+              ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/redux');
+              },
+              child: const Text('Navigate to redux')
+            )
           ]
         )
         )
