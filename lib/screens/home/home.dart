@@ -3,6 +3,7 @@ import 'clock.dart';
 import 'timecounter.dart';
 import 'authenticator.dart';
 import '/code/globalstate.dart';
+import '/screens/secondscreen.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,6 +11,13 @@ class Home extends StatefulWidget {
 }
 
 class _MyAppState extends State<Home> {
+
+  void _onNavigateWithParameters() {
+    Navigator.push(
+      context, 
+      MaterialPageRoute(
+        builder: (context) => SecondScreen()));
+  }
 
   late TextEditingController _name;
   final GlobalState _store = GlobalState.instance;
@@ -135,6 +143,11 @@ class _MyAppState extends State<Home> {
             ElevatedButton(
               onPressed: _onPressed,
               child: const Text('Go to second screen')
+              ),
+            const Text('Navigate with parameters'),
+            ElevatedButton(
+              onPressed: _onNavigateWithParameters,
+              child: const Text('Go')
               )
           ]
         )

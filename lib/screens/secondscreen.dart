@@ -11,13 +11,6 @@ class SecondState extends State<SecondScreen> {
 
   GlobalState _store = GlobalState.instance;
 
-  void _onNavigateWithParameters() {
-    Navigator.push(
-      context, 
-      MaterialPageRoute(
-        builder: (context) => SecondScreen()));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,12 +33,7 @@ class SecondState extends State<SecondScreen> {
               child: const Text('Back')
             ),
             MyWidget(),
-            Text('Hello ${_store.get('name')}'),
-            const Text('Navigate with parameters'),
-            ElevatedButton(
-              onPressed: _onNavigateWithParameters,
-              child: const Text('Go')
-              )
+            Text('Hello ${_store.get('name')}')
           ],
         )
     );
