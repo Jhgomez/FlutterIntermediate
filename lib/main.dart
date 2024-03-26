@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder> {
         '/home': (context) => Home(),
         '/removed': (context) => RemovedScreen(),
-        '/second': (context) => SecondScreen(),
+        '/second': (context) => SecondScreen(''),
         '/third': (context) => ThirdScreen(),
       },
       home: Home()

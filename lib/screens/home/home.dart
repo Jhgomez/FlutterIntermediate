@@ -16,7 +16,7 @@ class _MyAppState extends State<Home> {
     Navigator.push(
       context, 
       MaterialPageRoute(
-        builder: (context) => SecondScreen()));
+        builder: (context) => SecondScreen(_name.text)));
   }
 
   late TextEditingController _name;
