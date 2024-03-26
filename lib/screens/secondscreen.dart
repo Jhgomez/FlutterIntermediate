@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/mywidget.dart';
+import '/code/globalstate.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
@@ -7,6 +8,9 @@ class SecondScreen extends StatefulWidget {
 }
 
 class SecondState extends State<SecondScreen> {
+
+  GlobalState _store = GlobalState.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +32,8 @@ class SecondState extends State<SecondScreen> {
               }, 
               child: const Text('Back')
             ),
-            MyWidget()
+            MyWidget(),
+            Text('Hello ${_store.get('name')}')
           ],
         )
     );
