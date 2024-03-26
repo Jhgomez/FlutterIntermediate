@@ -3,13 +3,22 @@ import '/mywidget.dart';
 import '/code/globalstate.dart';
 
 class SecondScreen extends StatefulWidget {
+
+  SecondScreen(this.name);
+
+  String name;
+
   @override
-  State<SecondScreen> createState() => SecondState();
+  State<SecondScreen> createState() => SecondState(name);
 }
 
 class SecondState extends State<SecondScreen> {
 
-  GlobalState _store = GlobalState.instance;
+  SecondState(this.name);
+
+  String name;
+
+  final GlobalState _store = GlobalState.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +42,8 @@ class SecondState extends State<SecondScreen> {
               child: const Text('Back')
             ),
             MyWidget(),
-            Text('Hello ${_store.get('name')}')
+            Text('Hello ${_store.get('name')}'),
+            Text('Name with constructor $name')
           ],
         )
     );
