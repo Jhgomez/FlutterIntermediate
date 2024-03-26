@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
 class GlobalState {
-  final Map<dynamic, dynamic> data = <dynamic, dynamic>{};
   final Map<dynamic, dynamic> data = <dynamic, dynamic>{};
 
   static GlobalState instance = GlobalState._();

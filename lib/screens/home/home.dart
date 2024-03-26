@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'clock.dart';
 import 'timecounter.dart';
 import 'authenticator.dart';
