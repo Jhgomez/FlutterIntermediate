@@ -92,7 +92,7 @@ class _MyAppState extends State<Home> {
               children: items,
             ),
             const Text('My Stop Watch'),
-            // TimeCounter(),
+            TimeCounter(),
             Authenticator(
               onAutheticated: onAuthentication,
             ),
